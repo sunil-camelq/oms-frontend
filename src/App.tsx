@@ -25,6 +25,7 @@ import ProjectStatus from "./pages/ProjectStatus";
 import AssetManagement from "./pages/AssetManagement";
 import Profile from "./pages/Profile";
 import ExportData from "./pages/ExportData";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           {/* Public routes */}
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
+           <Route path="/forgot-password" element={<ForgotPassword />} /> 
 
           <Route element={<DashboardLayout />}>
             {/* <Route path="/index" element={<Index />} /> */}
@@ -45,18 +47,18 @@ const App = () => (
             <Route path="/companyperformance" element={<CompanyPerformance />} />
             <Route path="/recruitment" element={<Recruitment />} />
             <Route path="/departments" element={<Departments />} />
-            {/* <Route path="/employees" element={<Employees />} />
+            <Route path="/employees" element={<Employees />} />
             <Route path="/projectstatus" element={<ProjectStatus />} />
             <Route path="/payroll" element={<Payroll />}/>
             <Route path="/attendance" element={<Attendance />} />
             <Route path="/leave" element={<Leave />} />
             <Route path="/tasks" element={<Tasks />} />
-            <Route path="/exportdata" element={<ExportData />} /> */}
+            <Route path="/exportdata" element={<ExportData />} />
             <Route path="/profile" element={<Profile />} />
-            {/* <Route path="/reports" element={<Reports />} />
+            <Route path="/reports" element={<Reports />} />
             <Route path="/assetmanagement" element={<AssetManagement />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="*" element={<NotFound />} /> */}
+            <Route path="*" element={<NotFound />} />
           </Route>
 
 

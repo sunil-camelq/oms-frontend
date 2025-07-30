@@ -1,7 +1,7 @@
 
 
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import api from '@/lib/axios';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -95,6 +95,16 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
+              </div>
+
+              {/* 🔹 Forgot password link */}
+              <div className="flex justify-end">
+                <Link
+                  to="/forgot-password"
+                  className="text-sm text-blue-200 hover:underline"
+                >
+                  Forgot Password?
+                </Link>
               </div>
 
               <Button type="submit" className="w-full" disabled={isLoading}>
