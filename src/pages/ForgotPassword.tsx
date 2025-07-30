@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,23 +25,24 @@ const ForgotPassword = () => {
       return;
     }
 
-    // Mock submit (you can replace this with API call)
+    // Mock submit (send email)
     setSubmitted(true);
     setTimeout(() => {
-      alert("Password reset link has been sent to your email!");
+      alert(`OTP sent to ${email} (Use OTP: 123456)`);
       setSubmitted(false);
-      setEmail("");
-      navigate("/login"); // redirect after submit
-    }, 2000);
+      navigate("/otp-verification");
+    }, 1500);
   };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-violet-100 to-violet-200 p-4">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">Forgot Password?</CardTitle>
+          <CardTitle className="text-2xl font-bold text-center">
+            Forgot Password?
+          </CardTitle>
           <CardDescription className="text-center">
-            Enter your email address below and we will send you a link to reset your password.
+            Enter your email address below to receive an OTP for verification.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -61,7 +68,7 @@ const ForgotPassword = () => {
               variant="violet"
               disabled={submitted}
             >
-              {submitted ? "Sending Link..." : "Send Reset Link"}
+              {submitted ? "Sending OTP..." : "Send OTP"}
             </Button>
 
             <div className="flex items-center justify-center">
